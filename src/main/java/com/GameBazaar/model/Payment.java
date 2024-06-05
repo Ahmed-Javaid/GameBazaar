@@ -14,7 +14,6 @@ public class Payment {
     @JoinColumn(name = "transactionID", referencedColumnName = "transactionID")
     private Transaction transaction;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "payment_type")
     private String paymentType;
 
