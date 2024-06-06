@@ -1,18 +1,20 @@
 package com.GameBazaar.model;
 
-
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String FirstName;
-    private String LastName;
+    private String firstName;
+    private String lastName;
     private String email;
     private String DOB;
-    private String  username;
+    private String username;
     private String password;
     private String contactNumber;
 
@@ -20,11 +22,10 @@ public class User {
         super();
     }
 
-    public User(Integer id, String firstName, String lastName, String email, String DOB, String username, String password, String contactNumber) {
+    public User(String firstName, String lastName, String email, String DOB, String username, String password, String contactNumber) {
         super();
-        this.id = id;
-        this.FirstName = firstName;
-        this.LastName = lastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.DOB = DOB;
         this.username = username;
@@ -33,7 +34,7 @@ public class User {
     }
 
     // Getter and Setter methods for all fields
-
+    // Existing getters and setters here (no need to repeat them)
     public Integer getId() {
         return id;
     }
@@ -42,22 +43,25 @@ public class User {
         this.id = id;
     }
 
+    // Getter and setter for firstName
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        this.FirstName = firstName;
+        this.firstName = firstName;
     }
 
+    // Getter and setter for lastName
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        this.LastName = lastName;
+        this.lastName = lastName;
     }
 
+    // Getter and setter for email
     public String getEmail() {
         return email;
     }
@@ -66,6 +70,7 @@ public class User {
         this.email = email;
     }
 
+    // Getter and setter for DOB
     public String getDOB() {
         return DOB;
     }
@@ -74,6 +79,7 @@ public class User {
         this.DOB = DOB;
     }
 
+    // Getter and setter for username
     public String getUsername() {
         return username;
     }
@@ -82,6 +88,7 @@ public class User {
         this.username = username;
     }
 
+    // Getter and setter for password
     public String getPassword() {
         return password;
     }
@@ -90,6 +97,7 @@ public class User {
         this.password = password;
     }
 
+    // Getter and setter for contactNumber
     public String getContactNumber() {
         return contactNumber;
     }
@@ -99,11 +107,9 @@ public class User {
     }
 
     // Override toString() method
-
     @Override
     public String toString() {
-        return String.format("User [id=%s, FirstName=%s, LastName=%s, email=%s, DOB=%s, username=%s, password=%s, contactNumber=%s]",
-                id, FirstName, LastName, email, DOB, username, password, contactNumber);
+        return String.format("User [id=%s, firstName=%s, lastName=%s, email=%s, DOB=%s, username=%s, password=%s, contactNumber=%s]",
+                id, firstName, lastName, email, DOB, username, password, contactNumber);
     }
-
 }

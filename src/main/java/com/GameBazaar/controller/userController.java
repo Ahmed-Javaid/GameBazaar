@@ -25,8 +25,7 @@ public User retriveUser(@PathVariable int id) {
 // Method that posts a new user detail
 @PostMapping("/users")
 public User createUser(@RequestBody User user) {
-    User savedUser = service.save(user);
-    return savedUser;
+    return service.save(user);
 }
 
 // Method that deletes a user resource
